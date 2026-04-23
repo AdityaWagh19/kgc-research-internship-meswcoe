@@ -1,5 +1,5 @@
-# KGC — Adaptive RotatE Variants
-### Knowledge Graph Completion via Learnable Relation-Adaptive Parameters
+# Improving Embeddings to Improve Knowledge Graph Completion
+### Research Internship — MESWCOE | Adaptive RotatE Variants
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.5.1-orange)](https://pytorch.org)
@@ -45,7 +45,6 @@ Replaces the global adversarial temperature `α` with a per-relation learnable s
 kgc-research-internship-meswcoe/
 │
 ├── colab_train.py          ← PRIMARY: self-contained training script for Colab T4
-├── generate_outputs.py     ← Regenerate charts/CSVs without retraining
 ├── requirements.txt
 ├── README.md
 ├── project_report.md       ← Full research report
@@ -145,18 +144,6 @@ python experiments/sanity_check.py   # runs on Nations — tiny dataset
 | AMP FP16 (`torch.amp.autocast`) | ~1.5× via T4 tensor cores |
 | Sampled validation (1500/17K) | ~12× faster per check |
 | Dict-based filtered ranking | ~5× vs O(\|E\|) loop |
-
----
-
-## Reproduce Charts Without Retraining
-
-```python
-# Cell 1
-!pip install matplotlib pandas -q
-
-# Cell 2 — upload generate_outputs.py first, then:
-!python generate_outputs.py
-```
 
 ---
 
