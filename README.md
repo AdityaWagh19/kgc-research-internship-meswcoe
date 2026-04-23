@@ -22,7 +22,7 @@ This project proposes and benchmarks three targeted improvements to the [RotatE]
 
 > [!IMPORTANT]
 > **Every single model we trained — including the unmodified baseline — outperforms the original published RotatE paper.**
-> Our implementation achieves this with `dim=500` (half the paper's dimension) trained in ~1 hour on a T4 GPU.
+> Our implementation achieves this with `dim=500` (half the paper's dimension) trained in ~6 hour on a T4 GPU.
 
 ### Key Takeaways
 
