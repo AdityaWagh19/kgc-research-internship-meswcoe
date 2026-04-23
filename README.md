@@ -51,6 +51,41 @@ Replaces the global adversarial temperature `α` with a per-relation learnable s
 
 ---
 
+## System Architecture
+
+```mermaid
+flowchart TD
+    A["FB15k-237\n14,505 entities · 237 relations · 272K triples"]
+    A --> B["PyKEEN Data Loader"]
+    B --> C["Train Set\n272,115 triples"]
+    B --> D["Validation Set\n17,526 triples"]
+    B --> E["Test Set\n20,438 triples"]
+
+    C --> F["GPU Negative Sampler\nB × K random head/tail corruptions on CUDA"]
+    F --> G["Score Function\nf(h, r, t) = -‖h ∘ r - t‖  (RotatE distance)"]
+
+    G --> L1["RotatEBase\nFixed global γ and α"]
+    G --> L2["AMLRotatE\nLearnable γ_r per relation"]
+    G --> L3["REPRotatE\nLearnable γ_r + entity gate W_r"]
+    G --> L4["AATRotatE  ★ Full Model\nLearnable γ_r + W_r + α_r"]
+
+    L1 & L2 & L3 & L4 --> LF["Self-Adversarial Loss\n−log σ(γ_r + pos) − Σ p(α_r) · log σ(−neg − γ_r)"]
+    LF --> OPT["Adam Optimizer\nAMP FP16  ·  GradScaler  ·  batch=4096"]
+
+    D --> V["Sampled Validation\n1,500 random triples every 25 epochs"]
+    V --> ES{"Early Stopping\nPatience = 4 checks"}
+    ES -- "MRR improved" --> OPT
+    ES -- "No improvement" --> CK["Load Best Checkpoint"]
+
+    CK --> EV["Filtered MRR Evaluation\nFull test set  ·  dict-based O(degree) filter"]
+    E --> EV
+
+    EV --> R["Results\nMRR · Hits@1 · Hits@3 · Hits@10"]
+    R --> OUT["results/FB15k237/\nCSV · JSON · Charts"]
+```
+
+---
+
 ## Repository Structure
 
 ```
