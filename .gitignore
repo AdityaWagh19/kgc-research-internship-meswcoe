@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+dist/
+build/
+.env
+.venv/
+venv/
+
+# PyKEEN cache (auto-downloaded, large)
+~/.data/pykeen/
+*.cache
+
+# Model checkpoints (large binary files)
+*.pt
+*.pth
+*.ckpt
+
+# Raw dataset files (auto-downloaded by PyKEEN)
+data/
+
+# Colab local output directory
+/content/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log

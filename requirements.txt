@@ -1,0 +1,9 @@
+torch>=2.0
+pykeen>=1.10
+numpy
+pandas
+matplotlib
+seaborn
+pyyaml
+scikit-learn
+tqdm

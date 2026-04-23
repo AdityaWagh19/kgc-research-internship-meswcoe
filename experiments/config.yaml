@@ -1,0 +1,29 @@
+# KGC Experiment Configuration
+# Used by: experiments/sanity_check.py
+# Main training (Colab/local full runs) uses colab_train.py directly.
+
+# ── Local sanity check (Nations, fast) ───────────────────────
+sanity:
+  embedding_dim:        200
+  batch_size:           256
+  epochs:               100
+  lr:                   0.001
+  negative_samples:     32
+  margin:               9.0
+  reg_weight:           1e-3
+  patience:             5
+  eval_freq:            10
+
+# ── Full experiment config (used by colab_train.py) ──────────
+full:
+  embedding_dim:        500      # reduced for speed (~2% MRR drop vs 1000)
+  batch_size:           1024
+  epochs:               300      # early stopping typically exits ~150-200
+  lr:                   0.001
+  negative_samples:     128
+  margin:               9.0
+  reg_weight:           1e-3
+  patience:             7        # stop if val_MRR stagnates for 7 checks
+  eval_freq:            10       # validate every 10 epochs
+
+random_seed: 42

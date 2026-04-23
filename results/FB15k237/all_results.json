@@ -1,0 +1,30 @@
+{
+  "RotatE_base": {
+    "dataset": "FB15k237",
+    "MRR": 0.3799,
+    "Hits@1": 0.2758,
+    "Hits@3": 0.418,
+    "Hits@10": 0.5969
+  },
+  "AML_only": {
+    "dataset": "FB15k237",
+    "MRR": 0.3813,
+    "Hits@1": 0.2782,
+    "Hits@3": 0.4214,
+    "Hits@10": 0.5932
+  },
+  "REP_only": {
+    "dataset": "FB15k237",
+    "MRR": 0.3757,
+    "Hits@1": 0.2761,
+    "Hits@3": 0.4159,
+    "Hits@10": 0.5795
+  },
+  "AAT_full": {
+    "dataset": "FB15k237",
+    "MRR": 0.3901,
+    "Hits@1": 0.2847,
+    "Hits@3": 0.4285,
+    "Hits@10": 0.5978
+  }
+}
