@@ -17,7 +17,7 @@ This project proposes and benchmarks three targeted improvements to the [RotatE]
 | RotatE (base, our impl.) | 0.3799 | 0.2758 | 0.4180 | 0.5969 |
 | + AML-RotatE (C1) | 0.3813 | 0.2782 | 0.4214 | 0.5932 |
 | + REP-RotatE (C2) | 0.3757 | 0.2761 | 0.4159 | 0.5795 |
-| 🏆 **AAT-RotatE (Full)** | 🏆 **0.3901** | **0.2847** | **0.4285** | **0.5978** |
+| **AAT-RotatE (Full)** | **0.3901** | **0.2847** | **0.4285** | **0.5978** |
 | *RotatE paper (dim=1000)* | *0.338* | *0.241* | *0.375* | *0.533* |
 
 > [!IMPORTANT]
@@ -26,10 +26,10 @@ This project proposes and benchmarks three targeted improvements to the [RotatE]
 
 ### Key Takeaways
 
-- 📈 **+15.4% relative MRR** — AAT-RotatE (Full) vs. the published paper baseline (`0.3901` vs `0.338`)
-- 📈 **+12.4% relative MRR** — even the unmodified base model surpasses the paper (`0.3799` vs `0.338`)
-- 🎯 **Hits@10 = 0.5978** — the correct entity ranks in the top-10 candidates for ~60% of all test triples
-- ⚡ All results achieved at **half the embedding dimension** of the original paper (dim=500 vs dim=1000)
+- **+15.4% relative MRR** — AAT-RotatE (Full) vs. the published paper baseline (`0.3901` vs `0.338`)
+- **+12.4% relative MRR** — even the unmodified base model surpasses the paper (`0.3799` vs `0.338`)
+- **Hits@10 = 0.5978** — the correct entity ranks in the top-10 candidates for ~60% of all test triples
+- All results achieved at **half the embedding dimension** of the original paper (dim=500 vs dim=1000)
 
 ![MRR Ablation Study](results/FB15k237/ablation_mrr_FB15k237.png)
 
